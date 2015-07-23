@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Add homeworks and project to the course</h1>
+    </div>
+
+
+
+  <%= form_for :post, :url => { :action => :create, :id => @course.id } do |f| %>
+    
+    <div class="panel panel-info">
+      <div class="panel-heading"> <h3>Course: </h3> </div>
+      <div class="panel-body"><%= @course.name %></div>
+    </div>
+
+    <div class="panel panel-info">
+    <div class="panel-heading"><h3>Add homeworks: </h3></div>
+    <div class="panel-body">
+      <% @homeworks.each do |v| %>
+        <li>
+          <%= check_box_tag 'homework[]', v.id %>
+          <%= v.name %>
+        </li>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="panel panel-info">
+    <div class="panel-heading"><h3>Add project: </h3></div>
+    <div class="panel-body">
+      <% @projects.each do |v| %>
+        <li>
+          <%= radio_button_tag 'project', v.id %>
+          <%= v.name %>
+        </li>
+      <% end %>
+    </div>
+    </div>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+</div>
+</body>

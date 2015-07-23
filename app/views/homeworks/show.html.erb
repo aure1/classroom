@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Homework detailed</h1>
+    </div>
+
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @homework.name %>
+	</p>
+
+	<p>
+	  <strong>Description:</strong>
+	  <%= @homework.description %>
+	</p>
+
+	<ul class="pager">
+		<li><%= link_to 'Edit', edit_homework_path(@homework) %></li>
+		<li><%= link_to 'Back', homeworks_path %></li>
+	</ul>
+	</div>
+</body>

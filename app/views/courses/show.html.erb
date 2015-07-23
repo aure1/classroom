@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Courses detailed</h1>
+    </div>
+
+    <p id="notice"><%= notice %></p>
+
+    <div class="well well-lg">  
+      <p><h3>Course:</h3></p>
+      <strong>Name:</strong>
+      <%= @course.name %>
+    </div>
+
+    <div class="well well-lg">
+      <p><h3>Homeworks:</h3></p>
+      <% if @course.homeworks %> 
+      	<% @course.homeworks.each do |var| %>
+      		<p>name: <%= var.name%><br />
+      		description: <%= var.description%></p>
+      	<% end %>
+      <% end %>
+    </div>
+
+    <div class="well well-lg">  
+      <p><h3>Project:</h3></p>
+      	<% if @course.project %> 
+    	  	<p> name: <%= @course.project.name %><br />
+    	  	description: <%= @course.project.description %></p>
+      	<% end %>
+        </div>
+    
+    <ul class="pager">
+      <li><%= link_to "Add homeworks and project", "/modify/mod?id="+@course.id %></li>
+      <li><%= link_to 'Edit', edit_course_path(@course) %></li>
+      <li><%= link_to 'Back', courses_path %></li>
+    </ul>
+</div>
+</body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+	<div class="container">
+	  <div class="jumbotron">
+	    <h1>My Classroom Application</h1>
+	  </div>
+	  <div class="row">
+	    <div class="col-sm-4">
+	      <h3>Courses</h3>
+	      <p>This section you can create, modify, drop and watch all the courses you want.</p>
+	      <%= link_to  'more' ,'/courses'%>
+	    </div>
+	    <div class="col-sm-4">
+	      <h3>Projects</h3>
+	      <p>This section is about to add projects to link to the course, a course can have a project.</p>
+	      <%= link_to  'more' ,'/projects'%>
+	    </div>
+	    <div class="col-sm-4">
+	      <h3>Homeworks</h3>        
+	      <p>This section is about to add homeworks to link to the course, a course can have a lot of homeworks you want.</p>
+	      <%= link_to  'more' ,'/homeworks'%>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+</body>

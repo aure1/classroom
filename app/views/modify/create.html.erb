@@ -1,0 +1,11 @@
+<%= @course.name %>
+
+<% if @homeworks %>
+	<% @homeworks.each do |var|%>
+		<p><%= var %></p>
+	<% end %>
+<% end %>
+
+<% if @project %>
+	<p><%= @project %></p>
+<% end %>

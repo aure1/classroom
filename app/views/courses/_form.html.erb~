@@ -1,0 +1,45 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <h2>Homeworks</h2>
+    <% @homeworks.each do |var| %>
+      <li>
+        <%= check_box_tag '@role_ids[]', var.id -%>
+        <%= h var.name -%>
+      </li>
+    <%end%>
+  </div>
+
+  <div class="field">
+    <h2>Projects</h2>
+    <% @projects.each do |var| %>
+      <li>
+        <%= radio_button_tag 'radio', var.id -%>
+        <%= h var.name -%>
+      </li>
+    <%end%>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>
